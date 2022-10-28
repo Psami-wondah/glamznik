@@ -52,7 +52,7 @@ const MobileNav = ({
           </div>
         </Link>
       ) : (
-        <Link href={"/admin/dashboard"}>
+        <Link href={"/admin/login"}>
           <div
             className={`cursor-pointer py-2 border-b-2 border-transparent w-max m-auto ${
               activePage === "blog" && " text-[#daa520] border-b-[#daa520]"

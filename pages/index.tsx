@@ -9,6 +9,7 @@ import AboutStore from "components/AboutStore";
 import { GetServerSideProps } from "next";
 
 import { Api } from "services/api";
+import Head from "next/head";
 
 interface Item {
   slug: string;
@@ -42,7 +43,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 export default function Page(props: Props) {
   return (
-    <div className="">
+    <div className=" font-lato">
+      <Head>
+        <title>Glamznik Accessories</title>
+      </Head>
       <Slider items={props.allItems} />
       <Perks />
       {/* <Categories /> */}

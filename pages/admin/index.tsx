@@ -1,7 +1,15 @@
+import Head from "next/head";
 import React from "react";
 
 const Admin = () => {
-  return <div>Admin</div>;
+  return (
+    <div className="font-lato">
+      <Head>
+        <title>Admin - Glamznik Accessories</title>
+      </Head>
+      Admin
+    </div>
+  );
 };
 
 export default Admin;

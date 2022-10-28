@@ -4,6 +4,7 @@ import { withAuth } from "hocs/withAuth";
 import { ItemData } from "hooks/addItem.hook";
 import useDeleteItem from "hooks/deleteItem.hook";
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -56,7 +57,10 @@ const Dashboard = ({ allItems }: Props) => {
   };
 
   return (
-    <div className="px-[4%] pt-5 pb-5">
+    <div className="px-[4%] pt-5 pb-5 font-lato">
+      <Head>
+        <title>Admin Dashboard - Glamznik Accessories</title>
+      </Head>
       <div className=" flex justify-end ">
         <div className="w-[20vh]">
           <Link href={"/admin/dashboard/add"}>
@@ -69,7 +73,7 @@ const Dashboard = ({ allItems }: Props) => {
         <div className=" grid  md:grid-cols-2 lg:grid-cols-3 gap-y-9 gap-x-7 mt-5">
           {allItems.map((item, key) => (
             <div key={key} className="p-10 rounded bg-slate-100">
-              <div className="relative h-[30vh] w-[30vh] m-auto rounded border-jewelry-gold border-2 overflow-hidden">
+              <div className="relative h-[20vw] w-[20vw] m-auto rounded border-jewelry-gold border-2 overflow-hidden">
                 <Image
                   src={item.image_url}
                   alt=""
@@ -102,7 +106,7 @@ const Dashboard = ({ allItems }: Props) => {
           className="fixed z-[1] top-0 left-0 w-screen h-screen bg-black bg-opacity-5"
           onClick={() => setOpen({ state: false, slug: "" })}
         >
-          <div className="bg-white rounded w-[30vw] m-auto mt-[10vh] z-[2] p-[3rem]">
+          <div className="bg-white rounded-xl w-[80vw] md:w-[50vw] lg:w-[30vw] m-auto mt-[10vh] z-[2] p-[3rem]">
             <h2 className=" text-center font-bold text-2xl pt-5">
               Are you sure you want to delete?
             </h2>

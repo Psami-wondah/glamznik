@@ -5,6 +5,7 @@ import { ButtonSpinner, Loader } from "components/loader";
 import { withAuth } from "hocs/withAuth";
 import useAddItem from "hooks/addItem.hook";
 import useUploadImage from "hooks/uploadImage.hook";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -96,13 +97,16 @@ const Add = () => {
   };
 
   return (
-    <div className=" mt-[5vh] pb-[10vh] px-[4%]">
+    <div className=" mt-[5vh] pb-[10vh] px-[4%] font-lato">
+      <Head>
+        <title>Admin Add Item - Glamznik Accessories</title>
+      </Head>
       <div className="w-[20vh]">
         <Link href={"/admin/dashboard"}>
           <Button className="">Back</Button>
         </Link>
       </div>
-      <div className="text-center space-y-5 w-[30vw] m-auto">
+      <div className="text-center space-y-5 w-[80vw] md:w-[50vw] lg:w-[30vw] m-auto mt-4">
         <h1 className=" text-3xl font-bold uppercase">Add Item</h1>
         {err && <Info type="warning" name="Error" message={err} />}
         <InputField

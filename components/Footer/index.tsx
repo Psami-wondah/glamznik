@@ -7,7 +7,9 @@ const Footer = () => {
     <div className="mt-20 bg-[#F4F4F4] font-lato pb-20">
       <div className=" pt-10">
         <div className="flex gap-x-4 w-max m-auto">
-          <Image src={logo} alt="" className=" w-10 md:w-14" />
+          <div className="relative w-16 h-16 md:w-16 md:h-16 rounded-full overflow-hidden">
+            <Image src={logo} alt="" fill className="object-cover" />
+          </div>
           <div>
             <p className="font-[700] font-lato text-xl md:text-2xl">GLAMZNIK</p>
             <p className="uppercase font-bold text-sm ">Accessories</p>

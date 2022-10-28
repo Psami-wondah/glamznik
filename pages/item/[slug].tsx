@@ -1,6 +1,12 @@
+import Button from "components/button";
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { Api } from "services/api";
+import { API_URL, MAIN_URL, PHONE_NO } from "utils/constants";
+import whatsapp from "public/assets/svgs/whatsapp.svg";
+import Head from "next/head";
 
 interface Item {
   slug: string;
@@ -35,7 +41,38 @@ export const getServerSideProps: GetServerSideProps = async (
 };
 
 const Item = ({ item }: Props) => {
-  return <div>{item.name}</div>;
+  const itemUrl = MAIN_URL + "item/" + item.slug;
+  return (
+    <div className="font-lato pt-20">
+      <Head>
+        <title>{item.name} - Glamznik Accessories</title>
+      </Head>
+      <div className="grid grid-cols-2">
+        <div>
+          <div className="relative w-[30vw] h-[30vw] m-auto rounded-xl overflow-hidden">
+            <Image alt="" src={item.image_url} fill className=" object-cover" />
+          </div>
+        </div>
+
+        <div className="px-[4rem] space-y-4">
+          <h1 className="text-5xl font-bold">{item.name}</h1>
+          <h2 className="text-3xl">{item.description}</h2>
+          <h3 className=" text-jewelry-gold font-bold text-2xl">
+            ₦{item.price}
+          </h3>
+          <Link
+            href={`https://wa.me/${PHONE_NO}?text=I'm%20interested%20in%20this%20item%20${itemUrl}`}
+            target="_blank"
+          >
+            <Button className=" flex items-center justify-center gap-x-5">
+              {" "}
+              <Image alt="" src={whatsapp} /> Message Seller on Whatsapp
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Item;

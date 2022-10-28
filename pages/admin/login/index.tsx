@@ -2,6 +2,7 @@ import Info from "components/info";
 import { InputField } from "components/input";
 import { ButtonSpinner } from "components/loader";
 import useLogin from "hooks/login.hook";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { Auth } from "services/storage";
@@ -48,6 +49,9 @@ const Login = () => {
   };
   return (
     <div className="flex justify-center mt-[10vh]">
+      <Head>
+        <title>Admin Login - Glamznik Accessories</title>
+      </Head>
       <div className=" space-y-5">
         <h1 className=" text-3xl font-bold uppercase">Glamznik Admin Login</h1>
         {err && <Info type="warning" name="Error" message={err} />}

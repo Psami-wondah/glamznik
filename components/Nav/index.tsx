@@ -24,18 +24,18 @@ const NavBar = () => {
     router.push("/");
   };
   return (
-    <div>
+    <div className=" font-poppins border-b-2 border-jewelry-gold pb-3">
       <div className="w-[95%] md:w-[80%] mt-[2vh] m-auto flex md:flex-col xl:flex-row items-center gap-x-[5%] justify-between md:justify-center">
-        <div className="flex gap-x-4">
-          <Image src={logo} alt="" className=" w-10 md:w-16" />
+        <div className="flex gap-x-4 items-center">
+          <div className="relative w-16 h-16 md:w-16 md:h-16 rounded-full overflow-hidden">
+            <Image src={logo} alt="" fill className="object-cover" />
+          </div>
           <div>
-            <p className="font-bold font-lato text-2xl md:text-3xl text-jewelry-gold">
+            <p className="font-[900] font-lato text-2xl md:text-3xl text-jewelry-gold">
               GLAMZNIK
             </p>
-            <p className="uppercase font-bold text-sm ">Accessories</p>
-            <p className="uppercase text-xs">
-              Get the best perfumes and jewelries
-            </p>
+            <p className="uppercase font-bold text-sm font-lato">Accessories</p>
+            <p className=" text-xs">Get the best perfumes and jewelries</p>
           </div>
         </div>
 

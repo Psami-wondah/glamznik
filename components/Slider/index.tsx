@@ -26,7 +26,7 @@ const Slider = ({ items }: SliderProps) => {
   return (
     <div className="relative">
       <Carousel
-        className="mt-[2vh]"
+        // className="mt-[2vh]"
         autoPlay={true}
         infiniteLoop={true}
         showThumbs={false}

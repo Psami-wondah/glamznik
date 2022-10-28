@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         lato: ["Lato"],
+        poppins: ["Poppins"],
       },
       colors: {
         "jewelry-gold": "#daa520",
