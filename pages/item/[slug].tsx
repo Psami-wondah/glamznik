@@ -47,14 +47,14 @@ const Item = ({ item }: Props) => {
       <Head>
         <title>{item.name} - Glamznik Accessories</title>
       </Head>
-      <div className="grid grid-cols-2">
+      <div className="grid md:grid-cols-2">
         <div>
-          <div className="relative w-[30vw] h-[30vw] m-auto rounded-xl overflow-hidden">
+          <div className="relative w-[60vw] h-[60vw]  md:w-[30vw] md:h-[30vw] m-auto rounded-xl overflow-hidden">
             <Image alt="" src={item.image_url} fill className=" object-cover" />
           </div>
         </div>
 
-        <div className="px-[4rem] space-y-4">
+        <div className=" m-auto px-[1rem] lg:px-[4rem] space-y-4 w-full text-center md:text-left">
           <h1 className="text-5xl font-bold">{item.name}</h1>
           <h2 className="text-3xl">{item.description}</h2>
           <h3 className=" text-jewelry-gold font-bold text-2xl">
@@ -64,7 +64,7 @@ const Item = ({ item }: Props) => {
             href={`https://wa.me/${PHONE_NO}?text=I'm%20interested%20in%20this%20item%20${itemUrl}`}
             target="_blank"
           >
-            <Button className=" flex items-center justify-center gap-x-5">
+            <Button className=" flex items-center justify-center gap-x-5 w-full">
               {" "}
               <Image alt="" src={whatsapp} /> Message Seller on Whatsapp
             </Button>
